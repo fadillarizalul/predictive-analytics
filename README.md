@@ -86,6 +86,9 @@ Untuk **Logistic Regression**:
 | macro avg     | 0.71289   | 0.64477  | 0.66346 |
 | weighted avg  | 0.77716   | 0.79821  | 0.77925 |
 
+Lebih lengkap untuk metrik evaluasi model Logistic Regression sebagai berikut  
+![met_eval logres](https://user-images.githubusercontent.com/76253393/137236587-693a2bad-c42a-4c73-9404-bfe3d8cf6af8.PNG)  
+
 Untuk **Decision Tree**:
 |     | precision |  recall | f1-score |
 |----:|    ------ |  -----  | -------  |
@@ -95,6 +98,9 @@ Untuk **Decision Tree**:
 | macro avg     | 0.94235   | 0.94593  | 0.94413 |
 | weighted avg  | 0.96066   | 0.96048  | 0.96056 |
 
+Lebih lengkap untuk metrik evaluasi model Decision Tree sebagai berikut  
+![met_eval DT](https://user-images.githubusercontent.com/76253393/137236610-14b2bb78-4a58-4786-b116-1778ed80c6a1.PNG)  
+
 Untuk **Random Forest**:
 |     | precision |  recall | f1-score |
 |----:|    ------ |  -----  | -------  |
@@ -103,6 +109,9 @@ Untuk **Random Forest**:
 | accuracy      |     |     |  0.97366 |
 | macro avg     | 0.97086   | 0.95365  | 0.96191 |
 | weighted avg  | 0.97354   | 0.97366  | 0.97341 |
+
+Lebih lengkap untuk metrik evaluasi model Random Forest sebagai berikut  
+![met_eval RF](https://user-images.githubusercontent.com/76253393/137236733-0ea3df50-1946-4201-ad70-1f58a1ee9965.PNG)  
 
 Berdasarkan kerja dari ketiga model yang digunakan, mengacu pada nilai akurasi yang didapatkan, disimpulkan bahwa model terbaik yaitu menggunakan algoritma Random Forest.
 Pada Random Forest, terdapat parameter *random_state*, parameter ini membuat solusi mudah untuk direplikasi. Nilai dari random_state selalu menghasilkan hasil yang sama jika diberikan dengan parameter dan data pelatihan yang sama. Beberapa sumber menyebutkan, semua parameter yang digunakan dalam model dapat terkadang berkinerja lebih baik daripada keadaan acak individu.
