@@ -76,7 +76,7 @@ Pada tahap ini, saya mengembangkan model machine learning dengan tiga algoritma.
 2. Decision Tree
 3. Random Forest
 
-Dari pemodelan yang dilakukan untuk dua algoritma tersebut, didapatkan masing-masing metrik *Classification report model* yaitu sebagai berikut
+Dari pemodelan yang dilakukan untuk dua algoritma tersebut, didapatkan masing-masing metrik *Classification report model* yaitu sebagai berikut  
 Untuk **Logistic Regression**:
 |     | precision |  recall | f1-score |
 |----:|    ------ |  -----  | -------  |
