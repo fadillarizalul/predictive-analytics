@@ -21,14 +21,14 @@ Menurut [penelitian](https://www.ejbmr.org/index.php/ejbmr/article/view/893) dis
 
 ### Solution statements
 Dalam hal ini, saya mengajukan tiga pendekatan algoritma klasifikasi dalam Machine Learning, yaitu Logistic Regression, Decision Tree, dan Random Forest.
-- **Logistic Regression**. 
+- **Logistic Regression**.  
 Algoritma ini umumnya digunakan dalam model klasifikasi biner. LogRes adalah algoritma yang dapat digunakan untuk memodelkan peluang suatu kelas atau kejadian tertentu. Digunakan ketika data dapat dipisahkan secara linier dan hasilnya biner. Meski demikian, algoritma ini juga bisa digunakan dalam permasalahan klasifikasi multi-kelas. Kelebihannya yaitu algoritma bekerja cukup sederhana. Kekurangannya yaitu karena sederhana, untuk permasalahan yang kompleks algoritma ini kurang bisa diandalkan.
 
-- **Decision Tree**
+- **Decision Tree**  
 Decision Tree adalah struktur pohon seperti diagram alur di mana tiap satu kotak mewakili fitur (atau atribut), cabang mewakili aturan keputusan, dan setiap bagian daun mewakili hasilnya. Node paling atas dalam pohon keputusan dikenal sebagai root node. Root node belajar untuk mempartisi berdasarkan nilai atribut. Ini mempartisi pohon secara rekursif memanggil partisi rekursif. Struktur seperti diagram alur ini dapat memudahkan dalam pengambilan keputusan.
 Decision Tree bekerja dengan cara menyeleksi atribut terbaik berdasarkan penilaian seperti Information Gain lalu memisahkan atribut menjadi subset yang lebih kecil. Proses tersebut diulang secara rekursif untuk setiap subset sampai salah satu kondisi cocok.
 
-- **Random Forest**.
+- **Random Forest**  
 Merupakan Ensemble Learning yang terdiri dari beberapa macam algoritma. Random Forest adalah algoritma klasifikasi yang terdiri dari banyak pohon keputusan. Random Forest menambahkan suatu randomness tambahan pada model, sambil membuat suatu pohon keputusan. Alih-alih mencari fitur yang paling penting saat memisahkan sebuah node, RF mencari fitur terbaik di antara subset fitur yang acak. Hal ini menghasilkan keragaman yang luas yang umumnya menghasilkan model yang lebih baik. Salah satu kelebihan Random Forest adalah dapat digunakan untuk masalah klasifikasi dan regresi dengan hasil yang baik.
 
 ## Data Understanding
@@ -55,18 +55,18 @@ Variabel-variabel pada Karakteristik Karyawan ConDrossiers adalah sebagai beriku
 
 ## Data Preparation
 Data Preparation yang digunakan yaitu:
-- Deteksi Missing Value
+- Deteksi Missing Value  
 Dataset memiliki Missing Value pada beberapa fiturnya, sehingga jika dibiarkan kosong tidak terisi maka akan menyebabkan model tidak menghasilkan model yang diharapkan. Seperti akan terjadi error. Sehingga untuk kasus dalam proyek ini fitur yang memiliki Missing Value perlu diisi dengan nilai tertentu. Salah satu cara yaitu dengan melakukan imputasi nilai rata-rata dari fitur kemudian mengisinya pada nilai yang kosong
-- Deteksi Outlier
+- Deteksi Outlier  
 Beberapa pengamatan dalam satu set data kadang berada di luar lingkungan pengamatan data lainnya. Pengamatan seperti itu disebut outlier. Untuk itu, dilakukan visualisasi data berupa *boxplot* untuk mengetahui rentang data yang termasuk outlier. Nilai yang termasuk outlier terdapat pada luaran Q1 dan Q3. Lalu, untuk mengatasinya digunakan metode IQR yang memiliki konsep kuartil.
-- Analisis Univariat
+- Analisis Univariat  
 Bagian ini dilakukan untuk melihat sebaran setiap fitur, bagi jenis kategorik dan jenis numerik. Sebaran ini dilihat untuk memberikan gambaran data, merangkum data dalam bentuk distribusi visual dan menemukan pola dalam data.
-- Analisis Multivariat
-Analisis Multivariate menunjukkan hubungan antara dua atau lebih variabel pada data. Analisis Multivariate menunjukkan hubungan antara dua variabel biasa disebut sebagai bivariat.
+- Analisis Multivariat  
+Analisis Multivariate menunjukkan hubungan antara dua atau lebih variabel pada data. Analisis Multivariate menunjukkan hubungan antara dua variabel biasa disebut sebagai bivariat.  
 Bagian ini dilakukan untuk melihat hubungan antar variabel yang ditunjukkan dalam peta hubungan korelasi. Nilai yang mendekati angka 1 memberikan tanda bahwa hubungan variabel berkorelasi positif.
-- Drop fitur
+- Drop fitur  
 Dilakukan penghapusan terhadap fitur yang berpengaruh kecil pada pemodelan, seperti fitur employee_id, fitur umur, fitur tahun_lulus, dan fitur IPK, karena fitur tersebut tidak berhubungan secara langsung terhadap Label.
-- Encoding fitur kategorikal
+- Encoding fitur kategorikal  
 Dilakukan agar fitur kategorik dapat diproses dalam model Machine Learning. Untuk melakukan proses encoding fitur kategori, salah satu teknik yang umum dilakukan adalah teknik one-hot-encoding. Teknik ini yaitu mengubah item dalam kolom jenis kategorikal menjadi numerik.
 
 ## Modeling
@@ -112,25 +112,25 @@ Dalam pengembangan model kasus ini, yaitu klasifikasi, digunakan metrik berupa *
 ![image of confussion matrix](https://miro.medium.com/max/1400/1*N6I3pi0prhiJ_Y85HAx4wA.png)
 
 ![image of key classification metrics](https://miro.medium.com/max/1400/1*UVP_xb4F6J-M-xH3haz5Jw.png)
-- Akurasi
-Merupakan salah satu metrik yang memberikan perbandingan dari prediksi model yang benar terhadap semua kemungkinan prediksi model.
-Akurasi = Jumlah prediksi yang benar/Total prediksi
+- Akurasi  
+Merupakan salah satu metrik yang memberikan perbandingan dari prediksi model yang benar terhadap semua kemungkinan prediksi model.  
+Akurasi = Jumlah prediksi yang benar/Total prediksi  
     ```
     from sklearn.metrics import accuracy_score
     accuracy_score(y_actual,y_predicted)
     ```
-- Precision
-Merupakan rasio *True Positive* dengan semua nilai positif yang diprediksi oleh model.
-Precision = True Positive/(True Positive + False Positive)
+- Precision  
+Merupakan rasio *True Positive* dengan semua nilai positif yang diprediksi oleh model.  
+Precision = True Positive/(True Positive + False Positive)  
 ![code of precision](https://dz2cdn1.dzone.com/storage/temp/14873695-1624024020596.png)
-- Recall
+- Recall  
 Merupakan rasio *True Positive* dengan semua nilai positif yang ada di dataset
-Recall = TP/(TP + FN)
+Recall = TP/(TP + FN)  
 ![code of recall](https://dz2cdn1.dzone.com/storage/temp/14873791-1624031221252.png)
-- F1 Score
-Merupakan gabungan dari Precision dan Recall.
-F-Score = 2 * (Precision * Recall)/(Precision + Recall)
-F1-Score memiliki nilai antara 0 dan 1. Skor mendekati 1, model semakin baik.
+- F1 Score  
+Merupakan gabungan dari Precision dan Recall.  
+F-Score = 2 * (Precision * Recall)/(Precision + Recall)  
+F1-Score memiliki nilai antara 0 dan 1. Skor mendekati 1, model semakin baik.  
 ![example of f1-score code](https://i0.wp.com/www.datasciencelearner.com/wp-content/uploads/2021/03/f1-score-Sklearn.png?ssl=1)
 
 Adapun kelebihan dan kekurangan dari penggunaan metrik accuracy, precision, recall, dan f1-score, yaitu.
@@ -151,3 +151,5 @@ print(metrics.classification_report(y_test, preds))
 **---Selesai---**
 
 Terima kasih
+
+
